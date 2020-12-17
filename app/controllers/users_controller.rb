@@ -18,9 +18,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      redirect_to @user
-      flash[:success] = "Welcome to the Inata Clone!"
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
       # success(valid params)
     else
       # Failure(not valid params)
