@@ -1,0 +1,18 @@
+<h1>コメント</h1>
+  <div class="card mb-4">
+    <div class="card-content">
+      <div id="comments_area">
+        <%= render 'comments/index', locals: { comments: @comments } %>
+      </div>
+
+      <% if logged_in? %>
+        <% if @comment.errors.any? %>
+          <% @comment.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <%= render 'comments/form', locals: { comment: @comment, micropost: @micropost } %>
+    </div>
+  </div> 
