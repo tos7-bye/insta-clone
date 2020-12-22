@@ -1,16 +1,24 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="user">
+    <%= link_to micropost.user.name, micropost.user %>
+  </span>
   <span class="content">
     <%= micropost.content %>
     <%= image_tag micropost.display_image if micropost.image.attached? %>
   </span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    <% if current_user?(micropost.user) %>
-      <%= link_to "delete", micropost, method: :delete,
-                                       data: { confirm: "削除しますか?" } %>
-    <% end %>
+    <%= time_ago_in_words(micropost.created_at) %> 前.
   </span>
-<%= link_to "コメントする", micropost_path(@user) %>
+
+<%= link_to micropost_path(@user) do%>
+  <span>
+    <i class="fa fa-comment comment-btn" aria-hidden="true"></i>
+    <%= micropost.comments.count %>
+  </span>
+<% end %>
+
+  <div id="likes-btn-<%= micropost.id %>" class="likes-btn">
+    <%= render partial: 'likes/like', locals: { micropost: micropost} %>
+  </div>
 </li>

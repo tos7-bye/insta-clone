@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 /* mixins, variables, etc. */
 @mixin box_sizing {
@@ -300,3 +301,37 @@ span.image {
     border: 0;
   }
 }
+
+/* comment */
+
+.comment-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #808080;
+}
+
+/* likes */
+
+.likes-btn {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.unlike-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #e54747;
+  margin-left: 20px;
+  text-decoration: none;
+  }
+
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #808080; 
+  margin-left: 20px;
+  text-decoration: none;
+  }
