@@ -1,0 +1,15 @@
+<% provide(:title, "Notifications") %>
+<h1>Notification</h1>
+  <%= link_to destroy_all_notifications_path(current_user), method: :delete,
+              data: { confirm: "Do you really want to delete this" } do %>
+    <i class="fa fa-trash trash-btn"></i>
+    <span>All delete</span>
+  <% end %>
+  <hr>
+<% if @notifications.exists? %>
+  <div class="notification-index">
+    <%= render @notifications %>
+  </div>
+<% else %>
+    <p>No notifications/p>
+<% end %> 

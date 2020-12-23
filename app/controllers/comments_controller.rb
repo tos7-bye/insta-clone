@@ -4,15 +4,17 @@ class CommentsController < ApplicationController
 
   def create
     @micropost = Micropost.find(params[:micropost_id])
-    @comment = current_user.comments.build(comment_params)
-    @comment.micropost_id = params[:micropost_id]
+    @comment = @micropost.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    @comment_micropost = @comment.micropost
     @comments = @micropost.comments
     if @comment.save
+      @comment_micropost.create_notification_comment(current_user, @comment.id)
       flash[:success] = 'コメントしました'
-      redirect_to user_path(current_user)
+      redirect_to micropost_path(@micropost)
     else
       flash[:success] = 'コメントに失敗しました'
-      redirect_to user_path(current_user)
+      redirect_to micropost_path(current_user)
     end
   end
 

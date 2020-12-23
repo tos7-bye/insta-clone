@@ -1,0 +1,10 @@
+<% if unchecked_notifications.any? %>
+  <span class="circle">
+    <i class="fa fa-circle" style="color: gold;"></i>
+  </span>
+<% end %>
+<li>
+  <%= link_to notifications_path do %>
+    <i class="fa fa-bell fa-2x"></i>
+  <% end %>
+</li> 

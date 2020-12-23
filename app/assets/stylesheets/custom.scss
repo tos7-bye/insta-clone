@@ -69,6 +69,24 @@ p {
   font-weight: bold;
 }
 
+.fa-home {
+  font-size: 35px;
+}
+
+.fa-sign-in {
+  font-size: 35px;
+}
+
+.circle {
+  position: relative;
+}
+
+.fa-circle {
+  position: absolute;
+  top: 10px;
+  right: 75px;
+}
+
 #logo:hover {
   color: #fff;
   text-decoration: none;
@@ -334,4 +352,14 @@ span.image {
   color: #808080; 
   margin-left: 20px;
   text-decoration: none;
+  }
+
+   /* delete */
+   .trash-btn {
+    display: inline-block;
+    width: 25px;
+    height: 30px;
+    font-size: 25px;
+    color: #808080;
+    margin-left: 20px;
   }
