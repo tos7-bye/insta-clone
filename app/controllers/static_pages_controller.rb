@@ -6,12 +6,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def help
+  def terms_of_service
   end
 
-  def about
-  end
-
-  def contact
+  def privacy_policy
   end
 end
