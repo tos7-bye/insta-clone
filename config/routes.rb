@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   resources :microposts,          only: [:show,:create, :destroy] do 
     resources :comments,         only: [:create, :destroy]
     resource :likes,                    only:[:create, :destroy]
+    collection do
+      get 'search'
+    end
   end 
   resources :notifications,        only:[:index, :destroy] do
     collection do

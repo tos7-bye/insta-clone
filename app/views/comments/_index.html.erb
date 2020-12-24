@@ -7,8 +7,8 @@
   </div>
   <% if comment.user == current_user %>
     <div class="comment-delete">
-      <%= time_ago_in_words(comment.created_at) %>前
-      | <%= link_to "削除", [@micropost, comment], method: :delete, remote: true %>
+      <%= time_ago_in_words(comment.created_at) %>ago
+      | <%= link_to "Delete", [@micropost, comment], method: :delete, remote: true %>
       <hr>
     </div>
   <% end %>

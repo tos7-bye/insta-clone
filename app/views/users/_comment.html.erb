@@ -1,5 +1,3 @@
-<% provide(:title, "Comments") %>
-
 <div class="micropost-container">
   <div class="text-center">
     <%= image_tag @micropost.display_image if @micropost.image.attached? %>
@@ -22,17 +20,18 @@
         </div>
         <div class="comment-index">
           <% if comment.user == current_user %>
-              <%= time_ago_in_words(comment.created_at) %>前.
+              <%= time_ago_in_words(comment.created_at) %>ago.
             | <%= link_to 'Delete', [@micropost, comment], method: :delete, remote: true %>
               <hr>
           <% else %>
             <div class="comment-delete">
-              <%= time_ago_in_words(comment.created_at) %>ago.
+              <%= time_ago_in_words(comment.created_at) %>前.
               <hr>
           <% end %>
         </div>
       <% end %>
     </div>
+
     <% if logged_in? %>
       <% if @comment.errors.any? %>
         <% @comment.errors.full_messages.each do |message| %>

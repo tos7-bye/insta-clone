@@ -11,7 +11,10 @@
 
 /* universal */
 body {
-  padding-top: 60px;
+  padding-top: 100px;
+}
+.container {
+  padding-top: 10px;
 }
 section {
   overflow: auto;
@@ -23,10 +26,10 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  margin-top: 50px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 /* typography */
@@ -57,16 +60,26 @@ p {
 }
 
 /* header */
+header {
+  height: 100px;
+}
 
 #logo {
   float: left;
-  margin-right: 10px;
+  margin-left: 50px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+}
+#logo:hover {
+  opacity: 0.7;
+}
+
+.nav {
+  padding: 20px 30px 30px 0;
 }
 
 .fa-home {
@@ -87,14 +100,11 @@ p {
   right: 75px;
 }
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+.top-image {
+  width: 500px;
+  height: 350px;
+  margin: 30px 0;
 }
-
-// img {
-//   display: none;
-// }
 
 /* footer */
 
@@ -189,7 +199,7 @@ aside {
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
+    border-left: 1px solid gray;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -220,6 +230,22 @@ aside {
   padding: 0;
 }
 
+.introduction {
+  margin: 0;
+  p {
+    color: gray;
+    margin: 0;
+  }
+}
+.web-site {
+  margin: 0;
+  padding-top: 0;
+  p {
+    color: gray;
+    margin: 0;
+  }
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -231,6 +257,11 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+.new-container p {
+  line-height: 0;
+  margin-bottom: 30px;
+  color: gray;
 }
 
 #error_explanation {
@@ -269,8 +300,36 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid gray;
   }
+}
+
+/* Users edit */
+
+.edit-container p {
+  line-height: 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: gray;
+}
+
+.gravatar-edit {
+  margin-bottom: 30px;
+  margin-top: 40px;
+  a {
+    clear: both;
+    display: block;
+    padding-top: 10px;
+  }
+}
+
+.male-btn {
+  display: inline-flex;
+}
+
+.female-btn {
+  display: inline-flex;
+  margin-left: 50px;
 }
 
 /* microposts */
@@ -280,7 +339,7 @@ input {
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #fff;
   }
   .user {
     margin-top: 5em;
@@ -294,8 +353,9 @@ input {
       padding: 5px 0;
     }
   }
+
   .timestamp {
-    color: $gray-light;
+    color: gray;
     display: block;
     margin-left: 60px;
   }
@@ -326,8 +386,11 @@ span.image {
   width: 25px;
   height: 30px;
   font-size: 25px;
-  color: #808080;
+  color: gray;
+  margin-left: 20px;
 }
+
+
 
 /* likes */
 
@@ -341,7 +404,7 @@ span.image {
   height: 30px;
   font-size: 25px;
   color: #e54747;
-  margin-left: 20px;
+  margin-left: 60px;
   text-decoration: none;
   }
 
@@ -349,8 +412,8 @@ span.image {
   width: 25px;
   height: 30px;
   font-size: 25px;
-  color: #808080; 
-  margin-left: 20px;
+  color: gray; 
+  margin-left: 60px;
   text-decoration: none;
   }
 
@@ -360,6 +423,19 @@ span.image {
     width: 25px;
     height: 30px;
     font-size: 25px;
-    color: #808080;
+    color: gray;
     margin-left: 20px;
   }
+
+    /* search */
+
+.search-form {
+  display: inline-flex;
+  height: 48px;
+}
+
+.search-btn {
+  display: inline-flex;
+} 
+
+

@@ -2,28 +2,48 @@
 <% provide(:button_text, 'Save changes') %>
 <h1>Update your profile</h1>
 <div class="row">
+<div class="gravatar_edit">
+<%= gravatar_for @user %>
+<a href="https://gravatar.com/emails" target="_blank">profile change</a>
+</div>
   <div class="col-md-6 col-md-offset-3">
-  <%= form_with(model: @user, local: true) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+    <%= form_with(model: @user, local: true) do |f| %>
+      <div class="edit-container">
+        <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+        <%= f.label :full_name %>
+        <%= f.text_field :full_name, class: 'form-control' %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :user_name %>
+        <%= f.text_field :user_name, class: 'form-control' %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
+        <div class="male-btn">
+        <%= f.radio_button :gender, :male, class: "male-btn" %>
+        <%= f.label :gender, "男性", value: :male, class: "male-label" %>
+      </div>
+      <div class="female-btn">
+        <%= f.radio_button :gender, :female, class: "female-btn" %>
+        <%= f.label :gender, "女性", value: :female, class: "female-label" %>
+      </div>
+      <p>※private</p>
 
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+        <p>※private</p>
 
-    <%= f.submit "Save changes", class: "btn btn-primary" %>
-  <% end %>
-  
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="https://gravatar.com/emails" target="_blank">change</a>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, class: "form-control" %>
+        <p>※private</p>
+
+
+        <%= f.label :web_site %>
+        <%= f.text_field :web_site, class: 'form-control',  placeholder: "https://www.insta_clone.com" %>
+
+        <%= f.label :introduction %>
+        <%= f.text_area :introduction, class: "form-control" %>
+        <br>
+        <%= f.submit 'Save changes', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>

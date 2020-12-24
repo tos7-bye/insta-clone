@@ -4,23 +4,23 @@
     <%= link_to micropost.user.name, micropost.user %>
   </span>
   <span class="content">
-    <%= micropost.content %>
     <%= image_tag micropost.display_image if micropost.image.attached? %>
+    <%= micropost.content %>
   </span>
   <span class="timestamp">
-    <%= time_ago_in_words(micropost.created_at) %> 前.
+    <%= time_ago_in_words(micropost.created_at) %> ago.
   </span>
 
-<%= link_to micropost_path(@user) do%>
+  <div id="likes-btn-<%= micropost.id %>" class="likes-btn">
+    <%= render partial: 'likes/like', locals: { micropost: micropost } %>
+  </div>
+
+  <%= link_to micropost_path(micropost.id) do %>
   <span>
     <i class="fa fa-comment comment-btn" aria-hidden="true"></i>
     <%= micropost.comments.count %>
   </span>
 <% end %>
-
-  <div id="likes-btn-<%= micropost.id %>" class="likes-btn">
-    <%= render partial: 'likes/like', locals: { micropost: micropost} %>
-  </div>
 
   <% if current_user?(micropost.user) %>
   <%= link_to micropost, method: :delete, data: { confirm: "Do you really want to delete this" } do %>

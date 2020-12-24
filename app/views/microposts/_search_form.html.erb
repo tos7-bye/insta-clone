@@ -1,0 +1,7 @@
+<i class="fa fa-search"></i>
+<div class="search-form">
+  <%= form_tag search_microposts_path, method: :get do %>
+    <%= text_field_tag :search, '', placeholder: "post serch" %>
+    <%= submit_tag 'search', name: nil %>
+  <% end %>
+</div>

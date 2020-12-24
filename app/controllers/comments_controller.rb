@@ -7,21 +7,20 @@ class CommentsController < ApplicationController
     @comment = @micropost.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment_micropost = @comment.micropost
-    @comments = @micropost.comments
     if @comment.save
       @comment_micropost.create_notification_comment(current_user, @comment.id)
-      flash[:success] = 'コメントしました'
+      flash[:success] = 'Commented'
       redirect_to micropost_path(@micropost)
     else
-      flash[:success] = 'コメントに失敗しました'
-      redirect_to micropost_path(current_user)
+      flash[:success] = 'Comment failed'
+      redirect_to micropost_path(@micropost)
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:success] = 'コメントを削除しました'
+    flash[:success] = 'Comment Delleted'
     redirect_to user_path(current_user)
   end
 

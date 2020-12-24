@@ -1,0 +1,13 @@
+<h1>投稿の検索</h1>
+<%= form_tag search_microposts_path, method: :get do %>
+  <div class="search-form">
+    <%= text_field_tag :search, '', placeholder: "Post search" %> 
+  </div>
+  <div class="search-btn">
+    <%= submit_tag 'Search', name: nil, class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br>
+<ol class="microposts">
+  <%= render @microposts %>
+</ol>  

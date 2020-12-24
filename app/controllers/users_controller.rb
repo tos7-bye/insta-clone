@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @micropost = Micropost.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @comments = @micropost.comments
+    @comment = Comment.new
   end
 # GET/users/new
   def new
@@ -41,6 +43,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
+      flash.now[:danger] = "Profile editing failed"
       render 'edit'
     end
   end
