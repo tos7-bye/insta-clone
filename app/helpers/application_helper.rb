@@ -40,3 +40,26 @@ module ApplicationHelper
     @notifications = current_user.passive_notifications.where(checked: false)
   end
 end
+
+  def default_meta_tags
+    {
+      site: "Insta Clone",
+      title: "Insta Clone",
+      reverse: true,
+      separator: '|',
+      description: "Insta Cloneは、コンパクトなSNS機能を備えたアプリです。",
+      keywords: "SNS、写真、画像、投稿、共有",
+      noindex: ! Rails.env.production?,
+      canonical: request.original_url,
+      og: {
+        site_name: "Insta Clone",
+        title: "Insta Clone", 
+        description: "Insta Cloneは、コンパクトなSNS機能を備えたアプリです。",
+        type: "website",
+        url: request.original_url,
+        image: "image_url",
+        locale: "ja_JP",
+      }
+    }
+  end
+  
