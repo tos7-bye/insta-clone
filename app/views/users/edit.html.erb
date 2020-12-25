@@ -49,3 +49,8 @@
     </div>
   </div>
 </div>
+<br>
+<div class="withdrawal text-right">
+  <%= link_to "Withdraw", destroy_all_user_path(@user), method: :delete,
+                          data: { confirm: "Do you really want to unsubscribe" } %>
+</div>

@@ -1,53 +1,7 @@
-<% set_meta_tags title: 'コメント', description: 'Inssta Clone の投稿に対してコメントすることができます。' %>
+<% set_meta_tags title: 'ユーザー個別ページ', description: 'Inssta Clone内の投稿を見ることができます。' %>
+
 <% provide(:title, "Comments") %>
 
-<div class="micropost-container">
-  <div class="text-center">
-    <%= image_tag @micropost.display_image if @micropost.image.attached? %>
-  </div>
-  <div class="text-left">
-    <%= @micropost.content %>
-  </div>
-</div>
-<br>
-<hr>
-<div class="card mb-4">
-  <div class="card-content">
-    <div id="comments_area">
-      <% @comments.each do |comment| %>
-        <div class="comment-name">
-          <%= link_to comment.user.name, [comment.user] %>
-        </div>
-        <div class="comment-content">
-          <%= comment.content %>
-        </div>
-        <div class="comment-index">
-          <% if comment.user == current_user %>
-              <%= time_ago_in_words(comment.created_at) %>前.
-            | <%= link_to 'Delete', [@micropost, comment], method: :delete, remote: true %>
-              <hr>
-          <% else %>
-            <div class="comment-delete">
-              <%= time_ago_in_words(comment.created_at) %>ago.
-              <hr>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    <% if logged_in? %>
-      <% if @comment.errors.any? %>
-        <% @comment.errors.full_messages.each do |message| %>
-          <div><%= message %></div>
-        <% end %>
-      <% end %>
-    <% end %>
-
-    <%= form_with model: [@micropost, @comment], local: true, remote: true do |f| %>
-      <div class="field">
-        <%= f.text_area :content, class: 'input', placeholder: "Comment" %>
-      </div>
-      <%= f.submit "To comment", class: 'button is-primary' %>
-    <% end %>
-
-  </div>
-</div> 
+<h1>Comment</h1>
+<% @comments = @micropost.comments %>
+<%= render 'users/comment', {micropost: @micropost, comment: @comment} %>
