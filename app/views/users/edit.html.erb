@@ -39,10 +39,10 @@
 
 
         <%= f.label :web_site %>
-        <%= f.text_field :web_site, class: 'form-control',  placeholder: "https://www.insta_clone.com" %>
+        <%= f.text_field :web_site, class: 'form-control', value: @user.web_site, placeholder: "https://www.insta_clone.com" %>
 
         <%= f.label :introduction %>
-        <%= f.text_area :introduction, class: "form-control" %>
+        <%= f.text_area :introduction, class: "form-control", value: @user.introduction %>
         <br>
         <%= f.submit 'Save changes', class: 'btn btn-primary' %>
       <% end %>
