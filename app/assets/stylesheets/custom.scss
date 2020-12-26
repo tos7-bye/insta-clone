@@ -305,13 +305,14 @@ input {
 }
 
 /* Users edit */
-
 .edit-container p {
+
   line-height: 0;
   margin-top: 10px;
   margin-bottom: 30px;
   color: gray;
 }
+
 
 .gravatar-edit {
   margin-bottom: 30px;
@@ -438,4 +439,7 @@ span.image {
   display: inline-flex;
 } 
 
+.edit-container{
+  margin-top: 100px;
+}
 

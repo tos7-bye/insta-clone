@@ -1,7 +1,7 @@
 # メインのサンプルユーザーを1人作成する
 User.create!(full_name: "Toshiaki Takahashi",
              name:  "Toshi",
-             email: "tosoto1004@gmail.com",
+             email: "insta-clone@example.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
