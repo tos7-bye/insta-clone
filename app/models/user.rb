@@ -19,9 +19,7 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   validates :full_name, presence: true, length: { maximum: 50 }
   validates :name, presence: true, length: { maximum: 50 }
-  validates :phone_number, allow_blank: true,
-  numericality: {only_integer: true},
-  length: {in: 10..11 }
+  
   validates :introduction, length: {maximum:140}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
