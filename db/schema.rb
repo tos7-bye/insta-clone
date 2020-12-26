@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_25_054858) do
+ActiveRecord::Schema.define(version: 2020_12_26_083708) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2020_12_25_054858) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.integer "phone_number"
+    t.integer "phone_number", limit: 4
     t.text "introduction"
     t.string "web_site"
     t.string "gender"
