@@ -2,11 +2,11 @@ ja:
   activerecord:
     attributes:
       user:
-        full_name: full_name
-        name: user_name
-        email: mail
-        gender: gender
-        phone_number: phone_number
-        introduction: introduction
-        password: password
-        password_confirmation: password_confirmation
+        full_name: フルネーム
+        name: ユーザーネーム
+        email: メールアドレス
+        gender: 性別
+        phone_number: 電話番号
+        introduction: 自己紹介
+        password: パスワード
+        password_confirmation: パスワード確認
