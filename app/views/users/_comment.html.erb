@@ -24,9 +24,9 @@
             | <%= link_to 'Delete', [micropost, comment], method: :delete, remote: true %>
               <hr>
           <% else %>
-            <div class="comment-delete">
-              <%= time_ago_in_words(comment.created_at) %>ago.
-              <hr>
+          <div class="comment-delete">
+            <%= time_ago_in_words(comment.created_at) %>ago.
+            <hr>
           <% end %>
         </div>
       <% end %>
@@ -34,17 +34,17 @@
     <% if logged_in? %>
       <% if comment.errors.any? %>
         <% comment.errors.full_messages.each do |message| %>
-          <div><%= message %></div>
+          <div>
+            <%= message %>
+          </div>
         <% end %>
       <% end %>
     <% end %>
-
     <%= form_with model: [micropost, comment], local: true, remote: true do |f| %>
       <div class="field">
         <%= f.text_area :content, class: 'input', placeholder: "Comment" %>
       </div>
       <%= f.submit "To comment", class: 'btn btn-primary' %>
     <% end %>
-
   </div>
 </div> 

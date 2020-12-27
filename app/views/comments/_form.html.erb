@@ -1,6 +1,6 @@
 <%= form_with model: [@micropost, @comment], local: true, remote: true do |f| %>
   <div class = "field">
-  <%= f.text_area :content, class: 'input', placeholder: 'Comment' %>
+    <%= f.text_area :content, class: 'input', placeholder: 'Comment' %>
   </div>
   <%= f.submit " To comment",  class: "btn btn-primary" %>
   <% end %>

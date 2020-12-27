@@ -2,11 +2,11 @@
   <%= render 'shared/error_messages', object: f.object %>
   <span class="image">
   <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-</span>
-<div class="field">
-<%= f.text_area :content, placeholder: "Comment" %>
-</div>
-<%= f.submit "Post", class: "btn btn-primary" %>
+  </span>
+  <div class="field">
+  <%= f.text_area :content, placeholder: "Comment" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 
 <script type="text/javascript">

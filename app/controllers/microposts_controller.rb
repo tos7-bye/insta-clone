@@ -26,9 +26,9 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-def search
-  @microposts = Micropost.search(params[:search]) 
-end
+  def search
+    @microposts = Micropost.search(params[:search]) 
+  end
 
   private
 

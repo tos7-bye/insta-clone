@@ -16,10 +16,10 @@ module ApplicationHelper
     @visitor_comment = notification.comment_id
     #notification.actionがfollowかlikeかcommentか
     case notification.action
-    when "follow" then
-      tag.a(notification.visitor.name, href: users_path(@visitor),
+      when "follow" then
+        tag.a(notification.visitor.name, href: users_path(@visitor),
                                                        style: "font-weight: bold;")
-  + "があなたをフォローしました"
+        + "があなたをフォローしました"
       when "like" then
         tag.a(notification.visitor.name, href: users_path(@visitor),
                                           style: "font-weight: bold;")
@@ -39,7 +39,6 @@ module ApplicationHelper
   def unchecked_notifications
     @notifications = current_user.passive_notifications.where(checked: false)
   end
-end
 
   def default_meta_tags
     {
@@ -62,4 +61,4 @@ end
       }
     }
   end
-  
+end

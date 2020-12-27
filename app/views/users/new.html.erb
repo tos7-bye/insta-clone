@@ -5,11 +5,9 @@
 <h1>Sign up</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-  <div class="new-container">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <div class="new-container">
+      <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-
-
       <%= f.label :full_name %>
       <%= f.text_field :full_name, class: "form-control", placeholder: "takahashi toshiaki" %>
       <p>privacy</p>
@@ -27,12 +25,13 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <div class="terms_of_service text-center">
-      <%= link_to "terms_of_service", terms_of_service_path %> / 
-      <%= link_to "privacy_policy", privacy_policy_path %>
-      </div><br>
+        <%= link_to "terms_of_service", terms_of_service_path %> / 
+        <%= link_to "privacy_policy", privacy_policy_path %>
+      </div>
+      <br>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>

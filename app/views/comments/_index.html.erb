@@ -6,10 +6,10 @@
     <%= comment.content %>
   </div>
   <% if comment.user == current_user %>
-    <div class="comment-delete">
-      <%= time_ago_in_words(comment.created_at) %>ago
-      | <%= link_to "Delete", [@micropost, comment], method: :delete, remote: true %>
-      <hr>
-    </div>
+  <div class="comment-delete">
+    <%= time_ago_in_words(comment.created_at) %>ago
+    | <%= link_to "Delete", [@micropost, comment], method: :delete, remote: true %>
+    <hr>
+  </div>
   <% end %>
 <% end %>
