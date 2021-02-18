@@ -1,0 +1,22 @@
+<% if logged_in? %>
+  <% if micropost.liked_by?(current_user) %>
+    <%= link_to micropost_likes_path(micropost.id), method: :delete, remote: true do %>
+      <span>
+        <i class="fa fa-heart unlike-btn" aria-hidden="true"></i>
+        <%= micropost.likes.count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= link_to micropost_likes_path(micropost.id), method: :post, remote: true, class: "likes" do %>
+      <span>
+        <i class="fa fa-heart like-btn" aria-hidden="true"></i>
+        <%= micropost.likes.count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+  <span>
+    <i class="fa fa-heart unlike-btn" aria-hidden="true"></i>
+    <%= micropost.likes.count %>
+  </span>
+<% end %>

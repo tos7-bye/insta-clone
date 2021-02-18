@@ -1,0 +1,7 @@
+<% set_meta_tags title: 'コメント', description: 'Inssta Clone内のコメントを見ることができます。' %>
+
+<% provide(:title, "Comments") %>
+
+<h1>Comment</h1>
+<% @comments = @micropost.comments %>
+<%= render 'users/comment', {micropost: @micropost, comment: @comment} %>

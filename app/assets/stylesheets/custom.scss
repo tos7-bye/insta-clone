@@ -1,0 +1,432 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/* mixins, variables, etc. */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+body {
+  padding-top: 100px;
+}
+.container {
+  padding-top: 10px;
+}
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  margin-top: 50px;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+header {
+  height: 100px;
+}
+
+#logo {
+  float: left;
+  margin-left: 50px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  :hover {
+    opacity: 0.7;
+}
+}
+
+.nav {
+  padding: 20px 30px 30px 0;
+}
+
+.fa-home {
+  font-size: 35px;
+}
+
+.fa-sign-in {
+  font-size: 35px;
+}
+
+.circle {
+  position: relative;
+}
+
+.fa-circle {
+  position: absolute;
+  top: 10px;
+  right: 75px;
+}
+
+.top-image {
+  width: 500px;
+  height: 350px;
+  margin: 30px 0;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  a {
+    color: #555;
+    :hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;  
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid gray;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+.introduction {
+  margin: 0;
+  p {
+    color: gray;
+    margin: 0;
+  }
+}
+.web-site {
+  margin: 0;
+  padding-top: 0;
+  p {
+    color: gray;
+    margin: 0;
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.new-container p {
+  line-height: 0;
+  margin-bottom: 30px;
+  color: gray;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+  }
+}
+
+/* Users edit */
+.edit-container p {
+
+  line-height: 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: gray;
+}
+
+
+.gravatar-edit {
+  margin-bottom: 30px;
+  margin-top: 40px;
+  a {
+    clear: both;
+    display: block;
+    padding-top: 10px;
+  }
+}
+
+.male-btn {
+  display: inline-flex;
+}
+
+.female-btn {
+  display: inline-flex;
+  margin-left: 50px;
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #fff;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .timestamp {
+    color: gray;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+/* comment */
+
+.comment-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: gray;
+  margin-left: 20px;
+}
+
+
+
+/* likes */
+
+.likes-btn {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.unlike-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #e54747;
+  margin-left: 60px;
+  text-decoration: none;
+  }
+
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: gray; 
+  margin-left: 60px;
+  text-decoration: none;
+  }
+
+   /* delete */
+   .trash-btn {
+    display: inline-block;
+    width: 25px;
+    height: 30px;
+    font-size: 25px;
+    color: gray;
+    margin-left: 20px;
+  }
+
+    /* search */
+
+.search-form {
+  display: inline-flex;
+  height: 48px;
+}
+
+.search-btn {
+  display: inline-flex;
+} 
+
+.edit-container{
+  margin-top: 100px;
+}
+

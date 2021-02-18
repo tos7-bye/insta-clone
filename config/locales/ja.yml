@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        full_name: フルネーム
+        name: ユーザーネーム
+        email: メールアドレス
+        gender: 性別
+        phone_number: 電話番号
+        introduction: 自己紹介
+        password: パスワード
+        password_confirmation: パスワード確認
+        
